@@ -1,0 +1,18 @@
+{
+  "name": "mentometer",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "repository": "",
+  "author": "Kim Joar Bekkelund",
+  "license": "MIT",
+  "dependencies": {
+    "sockjs": "~0.3.7",
+    "underscore": "~1.5.2",
+    "express": "~3.4.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-reduce": "~0.1.8"
+  }
+}

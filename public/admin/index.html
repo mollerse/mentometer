@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mentometer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section class="question">
+      <h1>
+          <span class="num"></span>
+          <span class="question-text"></span>
+      </h1>
+
+      <ol class="alternatives"></ol>
+    </section>
+
+    <section class="answers"></section>
+
+    <section class="stats">
+      <div class="connected">
+        <span>0</span> er tilkoblet
+      </div>
+    </section>
+
+    <section class="timer">
+        <span>20.13</span> s
+    </section>
+
+    <section class="next-question" style="display: none;">
+        <a href="#">Neste spørsmål</a>
+    </section>
+
+    <section class="start">
+        <header>
+            <img class="logo" src="../BEKK_logo.svg"/>
+        </header>
+        <h1><a href="#/question/1">Start</a></h1>
+    </section>
+
+    <section class="finished">
+        <h1>Ferdig!</h1>
+    </section>
+
+    <script src="../vendor/d3.v3.min.js"></script>
+    <script src="../vendor/sockjs-0.3.min.js"></script>
+    <script src="../vendor/promiscuous-browser.js"></script>
+    <script src="../vendor/dispatch.js"></script>
+    <script src="../utils.js"></script>
+    <script src="mentometer.js"></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>
