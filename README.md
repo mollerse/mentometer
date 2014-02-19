@@ -46,6 +46,8 @@ Potensielle features
 - Lagre svar i database, slik at rapporter kan hentes ut
 - Gjør det superenkelt å lage et nytt mentometer
 - Gjør det superenkelt å deploye en annen plass
+- Tilgangskontroll på admin-side?
+- Kjøre på bekk.no-domene med CAS-sjekk for innlogging?
 
 Hosting
 -------
