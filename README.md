@@ -26,6 +26,8 @@ Backend:
 - [Node.js](http://nodejs.org/)
 - [express.js](http://expressjs.com/)
 - [SockJS](https://github.com/sockjs)
+- [Grunt](http://gruntjs.com/)
+- [pm2](https://github.com/Unitech/pm2)
 
 Frontend:
 
@@ -39,3 +41,27 @@ Hosting
 
 App-en hostes på Linode. Ta kontakt med Kim Joar, kim.bekkelund@bekk.no,
 dersom du ønsker å bruke mentometer-app-en.
+
+### Endre spørsmål på Linode
+
+```
+$ sudo su - root
+
+$ cd /srv/www/mentometer
+
+$ vim public/admin/dashboard.js
+```
+
+Gjør endringer her, pass på at det er gyldig JSON (for eksempel
+dobbelfnutter på keys)
+
+```
+$ grunt
+```
+
+Dette tar fort litt tid, gjerne 1-2 minutter
+
+```
+$ pm2 restart app
+```
+
