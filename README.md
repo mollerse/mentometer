@@ -42,6 +42,7 @@ Potensielle features
 - Sync antall valgalternativer på nåværende spørsmål mellom admin-side og svar-side
 - Vis nåværende spørsmål på svar-siden
 - Vis hva du har stemt på
+- Justere hvor ofte grafen tegnes, slik at det ser smooth ut
 - Muliggjør flere spørsmålssett — nå er spørsmål inlinet på admin-siden
 - Lagre svar i database, slik at rapporter kan hentes ut
 - Gjør det superenkelt å lage et nytt mentometer
