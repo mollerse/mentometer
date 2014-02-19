@@ -36,6 +36,17 @@ Frontend:
 - [dispatch.js](https://github.com/olav/dispatch.js)
 - [promiscuous](https://github.com/RubenVerborgh/promiscuous)
 
+Potensielle features
+--------------------
+
+- Sync antall valgalternativer på nåværende spørsmål mellom admin-side og svar-side
+- Vis nåværende spørsmål på svar-siden
+- Vis hva du har stemt på
+- Muliggjør flere spørsmålssett — nå er spørsmål inlinet på admin-siden
+- Lagre svar i database, slik at rapporter kan hentes ut
+- Gjør det superenkelt å lage et nytt mentometer
+- Gjør det superenkelt å deploye en annen plass
+
 Hosting
 -------
 
