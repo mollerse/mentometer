@@ -3,7 +3,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     reduce: {
         root: 'public',
-        outRoot: 'dist'
+        outRoot: 'dist',
+        optimizeImages: false
     }
   });
 
