@@ -1,30 +1,6 @@
 (function() {
 
-    var questions = [
-        {
-            "question": "Er dere&nbsp;klare?",
-            "alternatives": [
-                "Ja",
-                "Nei"
-            ]
-        },
-        {
-            "question": "Hvilken bokstav er før den tredje i&nbsp;alfabetet?",
-            "alternatives": [
-                "C",
-                "A",
-                "B"
-            ]
-        },
-        {
-            "question": "Hva er fremtidens&nbsp;plattform?",
-            "alternatives": [
-                "JVM",
-                "CLR",
-                "JS"
-            ]
-        }
-    ];
+    var questions = window.questions || [];
 
     var mentometer = createMentometer(questions);
 
