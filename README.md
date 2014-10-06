@@ -43,7 +43,6 @@ Potensielle features
 - Vis nåværende spørsmål på svar-siden
 - Vis hva du har stemt på
 - Justere hvor ofte grafen tegnes, slik at det ser smooth ut
-- Muliggjør flere spørsmålssett — nå er spørsmål inlinet på admin-siden
 - Lagre svar i database, slik at rapporter kan hentes ut
 - Gjør det superenkelt å lage et nytt mentometer
 - Gjør det superenkelt å deploye en annen plass
@@ -53,29 +52,25 @@ Potensielle features
 Hosting
 -------
 
-App-en hostes på Linode. Ta kontakt med Kim Joar, kim.bekkelund@bekk.no,
-dersom du ønsker å bruke mentometer-app-en.
+Deployes med Docker på DigitalOcean. Push master til Github, sjekk status på
+[Docker Hub](https://registry.hub.docker.com/u/kjbekkelund/mentometer).
 
-### Endre spørsmål på Linode
-
-```
-$ sudo su - root
-
-$ cd /srv/www/mentometer
-
-$ vim public/admin/dashboard.js
-```
-
-Gjør endringer her, pass på at det er gyldig JSON (for eksempel
-dobbelfnutter på keys)
+Når ferdig, logg inn og kjør:
 
 ```
-$ grunt
+$ docker pull kjbekkelund/mentometer
+$ docker run -p 80:9999 -v /data/questions:/opt/app/questions -d --name mentometer kjbekkelund/mentometer
 ```
 
-Dette tar fort litt tid, gjerne 1-2 minutter
+### Endre spørsmål
 
 ```
-$ pm2 restart app
+$ vim /data/questions/index.json
 ```
 
+Gjør endringer. Pass på at det er gyldig JSON (for eksempel
+dobbelfnutter på keys).
+
+```
+$ docker reload mentometer
+```
