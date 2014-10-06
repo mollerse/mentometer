@@ -3,7 +3,7 @@ FROM ubuntu:latest
 RUN apt-get update
 RUN apt-get -y install nodejs-legacy npm
 
-RUN npm install grunt-cli -g
+RUN npm install gulp -g
 RUN npm install pm2 -g --unsafe-perm
 
 ADD package.json /tmp/package.json
@@ -14,8 +14,8 @@ WORKDIR /opt/app
 
 ADD . /opt/app
 
-RUN grunt
 
 EXPOSE 9999
+RUN gulp
 
 ENTRYPOINT ["pm2", "start", "app.js", "--no-daemon"]

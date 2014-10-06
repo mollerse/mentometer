@@ -3,7 +3,9 @@
     <meta charset="utf-8">
     <title>Mentometer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- build:css style.css -->
     <link rel="stylesheet" href="style.css">
+    <!-- endbuild -->
   </head>
   <body>
     <section class="question">
@@ -42,12 +44,14 @@
         <h1>Ferdig!</h1>
     </section>
 
+    <!-- build:js app.js -->
+    <script src="../vendor/promiscuous-browser.js"></script>
     <script src="../vendor/d3.v3.min.js"></script>
     <script src="../vendor/sockjs-0.3.min.js"></script>
-    <script src="../vendor/promiscuous-browser.js"></script>
     <script src="../vendor/dispatch.js"></script>
     <script src="../utils.js"></script>
     <script src="mentometer.js"></script>
     <script src="dashboard.js"></script>
+    <!-- endbuild -->
   </body>
 </html>
