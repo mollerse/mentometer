@@ -1,4 +1,4 @@
-(function() {
+;(function() {
 
     var sock = new SockJS('/echo');
 
