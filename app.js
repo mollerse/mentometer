@@ -63,22 +63,10 @@ echo.on('connection', function(conn) {
 
 var app = express();
 
-app.get('/admin/questions.js', function(req, res) {
-    var questions = [];
-    try {
-        questions = require('./questions');
-    } catch(e) {
-        console.log(e);
-    }
-
-    res.set('Content-Type', 'application/javascript');
-    res.send('window.questions = ' + JSON.stringify(questions) + ';');
-});
-
 app.use(express.compress());
 app.use(express.static('dist'));
 app.use(express.static('public'));
 
 var server = http.createServer(app);
 echo.installHandlers(server, { prefix: '/echo' });
-server.listen(9999, '0.0.0.0');
+server.listen(process.env.PORT || 9000);

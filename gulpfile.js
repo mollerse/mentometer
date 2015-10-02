@@ -13,7 +13,6 @@ gulp.task('clean', function (cb) {
 gulp.task('default', ['clean'], function() {
     return gulp.src('public/**/*.html')
         .pipe(usemin({
-            css: [minifyCss(), 'concat'],
             js: [uglify(), rev()]
         }))
         .pipe(gulp.dest('dist/'));
