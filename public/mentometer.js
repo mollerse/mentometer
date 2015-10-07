@@ -1,19 +1,32 @@
 ;(function() {
 
-    var sock = new SockJS('/echo');
+    // var sock = new SockJS('/echo');
+    var connections = [];
 
-    sock.onopen = createSend({ type: "connect" });
-    sock.onclose = function() { location.reload() };
-
-    function answer(alternative) {
-        return createSend({ type: 'answer', alternative: alternative });
+    for (var i = 0; i < 20; i++) {
+      connections.push(new SockJS('/echo'));
     }
 
-    function createSend(data) {
+    connections.forEach(function(sock) {
+      sock.onopen = createSend({type: "connect"}, sock);
+      sock.onclose = function() { location.reload() };
+    })
+
+
+    function createSend(data, sock) {
         return function() {
             sock.send(JSON.stringify(data));
         }
     }
+
+    function answer(alternative) {
+      return function() {
+        connections.forEach(function(sock) {
+          createSend({ type: 'answer', alternative: alternative }, sock)();
+        })
+      }
+    }
+
 
     document.querySelector('.alternative-a').addEventListener('click', answer('a'));
     document.querySelector('.alternative-b').addEventListener('click', answer('b'));
